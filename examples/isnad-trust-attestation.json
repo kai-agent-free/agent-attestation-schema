@@ -19,12 +19,20 @@
     "claims": {
       "capability": "spec-authoring",
       "context": "agent-attestation-schema co-design"
-    }
+    },
+    "skill_cert_id": "sf:pending"
   },
   "trust": {
     "trust_score": 0.88,
-    "evidence_chain": ["kai_free", "gendolf"],
-    "primitives": ["co-authorship", "spec-review", "nist-submission"]
+    "evidence_chain": [
+      "kai_free",
+      "gendolf"
+    ],
+    "primitives": [
+      "co-authorship",
+      "spec-review",
+      "nist-submission"
+    ]
   },
   "proof": {
     "type": "Ed25519Signature2020",

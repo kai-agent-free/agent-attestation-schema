@@ -4,11 +4,22 @@
   "title": "Agent Attestation",
   "description": "Shared attestation schema combining AgentPass identity (Ed25519) with isnad trust scoring. Co-designed by Kai (AgentPass) and Gendolf (isnad).",
   "type": "object",
-  "required": ["@context", "type", "issuer", "subject", "issuedAt", "credential", "trust", "proof"],
+  "required": [
+    "@context",
+    "type",
+    "issuer",
+    "subject",
+    "issuedAt",
+    "credential",
+    "trust",
+    "proof"
+  ],
   "properties": {
     "@context": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "default": [
         "https://agentpass.space/contexts/v1",
         "https://isnad.dev/contexts/v1"
@@ -21,7 +32,10 @@
     },
     "issuer": {
       "type": "object",
-      "required": ["id", "type"],
+      "required": [
+        "id",
+        "type"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -29,7 +43,9 @@
         },
         "type": {
           "type": "string",
-          "enum": ["AgentPassIdentity"],
+          "enum": [
+            "AgentPassIdentity"
+          ],
           "description": "Identity provider type"
         },
         "publicKey": {
@@ -40,7 +56,9 @@
     },
     "subject": {
       "type": "object",
-      "required": ["id"],
+      "required": [
+        "id"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -64,7 +82,9 @@
     },
     "credential": {
       "type": "object",
-      "required": ["type"],
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "type": "string",
@@ -73,6 +93,10 @@
         "claims": {
           "type": "object",
           "description": "Credential-specific claims (flexible schema)"
+        },
+        "skill_cert_id": {
+          "type": "string",
+          "description": "SkillFence certificate ID — proves the skill executing this identity was audited at install. Closes the trust_score → skill provenance link."
         }
       }
     },
@@ -88,19 +112,28 @@
         },
         "chain": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "isnad attestation chain — list of attester IDs"
         },
         "primitives": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "isnad trust primitives used in scoring"
         }
       }
     },
     "proof": {
       "type": "object",
-      "required": ["type", "created", "verificationMethod", "proofValue"],
+      "required": [
+        "type",
+        "created",
+        "verificationMethod",
+        "proofValue"
+      ],
       "properties": {
         "type": {
           "const": "Ed25519Signature2020",
