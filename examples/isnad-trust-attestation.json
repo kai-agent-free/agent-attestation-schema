@@ -33,7 +33,7 @@
       "spec-review",
       "nist-submission"
     ],
-    "skill_cert_id": "sf:cert_example_id"
+    "skill_cert_id": "cert:spec-authoring:2026-03-08"
   },
   "proof": {
     "type": "Ed25519Signature2020",

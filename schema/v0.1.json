@@ -126,7 +126,7 @@
         },
         "skill_cert_id": {
           "type": "string",
-          "description": "SkillFence certificate ID linking trust_score to audited skill provenance"
+          "description": "Reference to auditable skill/capability certification that grounds the trust score"
         }
       }
     },
