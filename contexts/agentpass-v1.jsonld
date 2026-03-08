@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ap": "https://agentpass.space/vocab#",
+    "AgentAttestation": "ap:AgentAttestation",
+    "AgentPassIdentity": "ap:AgentPassIdentity",
+    "passportId": "ap:passportId",
+    "publicKey": "ap:publicKey",
+    "credential": "ap:credential",
+    "proof": "ap:proof",
+    "proofValue": "ap:proofValue",
+    "verificationMethod": "ap:verificationMethod"
+  }
+}

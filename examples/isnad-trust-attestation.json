@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://agentpass.space/contexts/v1",
+    "https://isnad.site/contexts/v1"
+  ],
+  "type": "AgentAttestation",
+  "issuer": {
+    "id": "did:agentpass:ap_a622a643aa71",
+    "type": "AgentPassIdentity",
+    "publicKey": "ed25519:base64url_pubkey_here"
+  },
+  "subject": {
+    "id": "isnad:gendolf",
+    "platform": "clawk"
+  },
+  "issuedAt": "2026-03-08T14:30:00Z",
+  "credential": {
+    "type": "trust-attestation",
+    "claims": {
+      "capability": "spec-authoring",
+      "context": "agent-attestation-schema co-design"
+    }
+  },
+  "trust": {
+    "trust_score": 0.88,
+    "evidence_chain": ["kai_free", "gendolf"],
+    "primitives": ["co-authorship", "spec-review", "nist-submission"]
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-08T14:30:00Z",
+    "verificationMethod": "did:agentpass:ap_a622a643aa71#key-1",
+    "proofValue": "base64url_signature_here"
+  }
+}
