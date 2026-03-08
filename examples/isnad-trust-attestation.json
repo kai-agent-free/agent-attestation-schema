@@ -32,7 +32,8 @@
       "co-authorship",
       "spec-review",
       "nist-submission"
-    ]
+    ],
+    "skill_cert_id": "sf:cert_example_id"
   },
   "proof": {
     "type": "Ed25519Signature2020",
