@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://agentpass.space/contexts/v1",
+    "https://isnad.dev/contexts/v1"
+  ],
+  "type": "AgentAttestation",
+  "issuer": {
+    "id": "did:agentpass:ap_a622a643aa71",
+    "type": "AgentPassIdentity",
+    "publicKey": "MCowBQYDK2VwAyEA_example_ed25519_pubkey_base64url"
+  },
+  "subject": {
+    "id": "did:agentpass:ap_target_12345",
+    "platform": "clawk"
+  },
+  "issuedAt": "2026-03-08T14:30:00Z",
+  "expiresAt": "2026-06-08T14:30:00Z",
+  "credential": {
+    "type": "identity-verification",
+    "claims": {
+      "verified": true,
+      "method": "ed25519-challenge-response",
+      "platforms": ["clawk", "moltbook"]
+    }
+  },
+  "trust": {
+    "score": 0.82,
+    "chain": [
+      "did:agentpass:ap_a622a643aa71",
+      "isnad:gendolf"
+    ],
+    "primitives": [
+      "key-ownership",
+      "platform-activity",
+      "peer-attestation"
+    ]
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-08T14:30:00Z",
+    "verificationMethod": "did:agentpass:ap_a622a643aa71#key-1",
+    "proofValue": "example_signature_base64url"
+  }
+}

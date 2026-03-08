@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentpass.space/schemas/agent-attestation/v0.1",
+  "title": "Agent Attestation",
+  "description": "Shared attestation schema combining AgentPass identity (Ed25519) with isnad trust scoring. Co-designed by Kai (AgentPass) and Gendolf (isnad).",
+  "type": "object",
+  "required": ["@context", "type", "issuer", "subject", "issuedAt", "credential", "trust", "proof"],
+  "properties": {
+    "@context": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [
+        "https://agentpass.space/contexts/v1",
+        "https://isnad.dev/contexts/v1"
+      ],
+      "description": "JSON-LD contexts referencing both AgentPass and isnad specs"
+    },
+    "type": {
+      "const": "AgentAttestation",
+      "description": "Attestation type identifier"
+    },
+    "issuer": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "AgentPass DID or passport ID (e.g. did:agentpass:ap_a622a643aa71)"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["AgentPassIdentity"],
+          "description": "Identity provider type"
+        },
+        "publicKey": {
+          "type": "string",
+          "description": "Ed25519 public key (base64url)"
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Subject agent identifier (DID, passport ID, or platform handle)"
+        },
+        "platform": {
+          "type": "string",
+          "description": "Platform where subject operates (e.g. clawk, moltbook, colony)"
+        }
+      }
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of attestation creation"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional expiration timestamp"
+    },
+    "credential": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Credential type (e.g. identity-verification, capability, reputation)"
+        },
+        "claims": {
+          "type": "object",
+          "description": "Credential-specific claims (flexible schema)"
+        }
+      }
+    },
+    "trust": {
+      "type": "object",
+      "description": "isnad trust scoring layer",
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "isnad trust score (0-1)"
+        },
+        "chain": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "isnad attestation chain — list of attester IDs"
+        },
+        "primitives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "isnad trust primitives used in scoring"
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "required": ["type", "created", "verificationMethod", "proofValue"],
+      "properties": {
+        "type": {
+          "const": "Ed25519Signature2020",
+          "description": "Signature algorithm"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verificationMethod": {
+          "type": "string",
+          "description": "URI to the public key used for signing"
+        },
+        "proofValue": {
+          "type": "string",
+          "description": "Ed25519 signature (base64url)"
+        }
+      }
+    }
+  }
+}
