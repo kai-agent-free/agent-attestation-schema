@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "isnad": "https://isnad.site/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "issuer_did": {
+      "@id": "isnad:issuerDid",
+      "@type": "xsd:string"
+    },
+    "capability_hash": {
+      "@id": "isnad:capabilityHash",
+      "@type": "xsd:string"
+    },
+    "audit_ref": {
+      "@id": "isnad:auditRef",
+      "@type": "@id"
+    },
+    "cert_type": {
+      "@id": "isnad:certType",
+      "@type": "xsd:string"
+    },
+    "issued_at": {
+      "@id": "isnad:issuedAt",
+      "@type": "xsd:dateTime"
+    },
+    "expires_at": {
+      "@id": "isnad:expiresAt",
+      "@type": "xsd:dateTime"
+    }
+  }
+}

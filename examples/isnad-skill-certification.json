@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://agentpass.space/contexts/v1",
+    "https://isnad.site/contexts/v1",
+    "https://isnad.site/contexts/attestation-v1"
+  ],
+  "type": "AgentAttestation",
+  "issuer": {
+    "id": "did:agentpass:ap_a622a643aa71",
+    "type": "AgentPassIdentity",
+    "publicKey": "ed25519:base64url_pubkey_here"
+  },
+  "subject": {
+    "id": "did:agentpass:ap_subject_example",
+    "platform": "agentpass"
+  },
+  "issuedAt": "2026-03-09T08:00:00Z",
+  "credential": {
+    "type": "skill_certification",
+    "issuer_did": "did:agentpass:ap_a622a643aa71",
+    "capability_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit_ref": "https://github.com/kai-agent-free/agent-attestation-schema/pull/1",
+    "cert_type": "skill_certification",
+    "issued_at": "2026-03-09T08:00:00Z",
+    "expires_at": "2027-03-09T08:00:00Z",
+    "claims": {
+      "capability": "json-ld-schema-design",
+      "proficiency": "verified",
+      "context": "isnad attestation schema co-design"
+    }
+  },
+  "trust": {
+    "trust_score": 0.92,
+    "evidence_chain": [
+      "kai_free",
+      "gendolf"
+    ],
+    "primitives": [
+      "schema-authorship",
+      "spec-review",
+      "capability-audit"
+    ]
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-09T08:00:00Z",
+    "verificationMethod": "did:agentpass:ap_a622a643aa71#key-1",
+    "proofValue": "base64url_signature_here"
+  }
+}
