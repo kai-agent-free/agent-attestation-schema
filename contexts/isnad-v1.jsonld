@@ -2,10 +2,26 @@
   "@context": {
     "@version": 1.1,
     "isnad": "https://isnad.site/vocab#",
-    "trust_score": {"@id": "isnad:trustScore", "@type": "xsd:decimal"},
-    "evidence_chain": {"@id": "isnad:evidenceChain", "@container": "@list"},
-    "primitives": {"@id": "isnad:primitives", "@container": "@set"},
+    "trust_score": {
+      "@id": "isnad:trustScore",
+      "@type": "xsd:decimal"
+    },
+    "evidence_chain": {
+      "@id": "isnad:evidenceChain",
+      "@container": "@list"
+    },
+    "primitives": {
+      "@id": "isnad:primitives",
+      "@container": "@set"
+    },
     "attester": "isnad:attester",
-    "attestation_ts": {"@id": "isnad:attestationTimestamp", "@type": "xsd:dateTime"}
+    "attestation_ts": {
+      "@id": "isnad:attestationTimestamp",
+      "@type": "xsd:dateTime"
+    },
+    "skill_cert_id": {
+      "@id": "isnad:skillCertId",
+      "@type": "xsd:string"
+    }
   }
 }
