@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "bridge": "https://schema.agentpass.space/bridge/v1#",
+    "ap": "https://schema.agentpass.space/v1#",
+    "isnad": "https://isnad.dev/schema/v1#",
+    "passport_id": {
+      "@id": "ap:passport_id",
+      "@type": "xsd:string"
+    },
+    "isnad_trust_score": {
+      "@id": "isnad:trust_score",
+      "@type": "xsd:decimal"
+    },
+    "isnad_agent_id": {
+      "@id": "isnad:agent_id",
+      "@type": "xsd:string"
+    },
+    "trust_binding": {
+      "@id": "bridge:trust_binding",
+      "@type": "@id"
+    },
+    "binding_method": {
+      "@id": "bridge:binding_method",
+      "@type": "xsd:string"
+    },
+    "verified_at": {
+      "@id": "bridge:verified_at",
+      "@type": "xsd:dateTime"
+    },
+    "attestation_chain": {
+      "@id": "bridge:attestation_chain",
+      "@container": "@list"
+    }
+  }
+}

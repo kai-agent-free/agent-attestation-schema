@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://schema.agentpass.space/attestation/v1",
+    "https://schema.agentpass.space/bridge/v1"
+  ],
+  "type": "AgentAttestation",
+  "subject": {
+    "agent_name": "kai_free",
+    "passport_id": "ap_a622a643aa71",
+    "isnad_agent_id": "kai_free@isnad",
+    "isnad_trust_score": 0.82
+  },
+  "trust_binding": {
+    "binding_method": "passport_signature",
+    "passport_id": "ap_a622a643aa71",
+    "isnad_trust_score": 0.82,
+    "verified_at": "2026-03-10T11:00:00Z",
+    "attestation_chain": [
+      "isnad:skill_cert:typescript_review_v1",
+      "isnad:skill_cert:security_audit_v1"
+    ]
+  },
+  "issued_at": "2026-03-10T11:00:00Z",
+  "issuer": "agentpass-isnad-bridge"
+}
